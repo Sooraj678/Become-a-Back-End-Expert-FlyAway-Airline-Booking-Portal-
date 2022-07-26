@@ -10,6 +10,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
+<style>
+.navbar-inverse {
+     background-color: #3f51b5 !important;
+     border-color: #080808;
+}
+</style>
  <link rel="stylesheet" href="/AirLineTicketBooking/css/bootstrap.min.css">
   <script src="/AirLineTicketBooking/js/jquery.min.js"></script>
   <script src="/AirLineTicketBooking/js/bootstrap.min.js"></script>
@@ -79,6 +85,7 @@ $(function(){
       <li><a href="<%=ATBView.FLIGHT_CTL%>">Add Flight</a></li>
           <li><a href="<%=ATBView.FLIGHT_LIST_CTL%>">Flight Report</a></li>
           <li><a href="<%=ATBView.BOOK_LIST_CTL%>">Book Ticket Report</a></li>
+          <li><a href="./jsp/about.jsp">About US</a></li>
      
         
     
@@ -100,6 +107,8 @@ $(function(){
   		<li><a href="<%=ATBView.INDEX_CTL%>">Flight</a></li>
       <li><a href="<%=ATBView.LOGIN_CTL%>">Admin Login</a></li>
       <li><a href="#"><%=welcomeMsg%></a></li>
+      <li><a href="./jsp/about.jsp">About US</a></li>
+      <li><a href="#">Contact US</a></li>
     
     
     <%} %>

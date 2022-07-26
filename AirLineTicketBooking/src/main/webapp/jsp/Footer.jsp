@@ -11,7 +11,7 @@
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color:#9e9e9e;
+   background-color:#607d8b;
    color: white;
    text-align: center;
    padding: 15px;
@@ -23,7 +23,9 @@
 
 
 <div class="footer">
-  <h5>&copy; Copyright 2022 |AirLine Ticket Booking| All Rights Reserved by FlyAway-An Airline Booking Portal</h5>
+  <h5>&copy; Copyright 2022 | AirLine Ticket Booking | All Rights Reserved by FlyAway-An Airline Booking Portal</h5>
+  Read about Fly Away  <a style="color: #ffab91;"
+				href="aboutUS.jsp"> <b> About US</b></a>
 </div>
 </body>
 </html>
