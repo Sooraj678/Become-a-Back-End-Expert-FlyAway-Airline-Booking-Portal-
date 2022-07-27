@@ -75,7 +75,7 @@ $(function(){
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="<%=ATBView.WELCOME_CTL%>">AirLine Ticket Booking</a>
+      <a class="navbar-brand" href="welcomeFlyAway.jsp">AirLine Ticket Booking</a>
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="<%=ATBView.WELCOME_CTL%>">Home</a></li>
@@ -105,7 +105,7 @@ $(function(){
     <%}else{%>
   		<li><a href="<%=ATBView.INDEX_CTL%>">Flight</a></li>
       <li><a href="<%=ATBView.LOGIN_CTL%>">Admin Login</a></li>
-      <li><a href="#"><%=welcomeMsg%></a></li>
+      <li><a href="welcomeGuest.jsp">Hi, Guest !</a></li>
       <li><a href="about.jsp">About</a></li>
       <li><a href="contact.jsp">Send Your Query</a></li>
     
