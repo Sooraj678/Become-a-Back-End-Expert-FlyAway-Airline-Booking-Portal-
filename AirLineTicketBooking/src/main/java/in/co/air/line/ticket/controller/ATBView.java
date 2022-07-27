@@ -44,6 +44,7 @@ public interface ATBView {
 	public String USER_LIST_CTL = APP_CONTEXT + "/ctl/UserListCtl";
 	
 	public String FLIGHT_CTL = APP_CONTEXT + "/FlightCtl";
+	public String CONTACT_CTL = APP_CONTEXT + "/ContactUserCtl";
 	public String FLIGHT_LIST_CTL = APP_CONTEXT + "/FlightListCtl";
 	
 	public String INDEX_CTL = APP_CONTEXT + "/IndexCtl";

@@ -44,9 +44,33 @@ input[type=submit]:hover {
 </head>
 <body>
 	<%@ include file="../jsp/Header.jsp"%>
+	
+	
+	<%
+	String msg = request.getParameter("msg");
+	if ("valid".equals(msg)) {
+%>
+	<h3 style="color:#ff6e40; font-family: italic;"><b>We Got Your Query, We will get back to you very soon...! Your Query is Submitted
+	Successfully, to us .....!!! </b></h3>
+
+	<%
+							}
+	%>
+	
+<%
+	if ("invalid".equals(msg)) {
+%>
+	<h3 style="color:red;"><b>While Submitting your Query, Got some error, Please try again...!</b></h3>
+
+	<%
+								}
+	%>
+	
+	
 	<div class="card " style="width: 80rem;">
 	<div class="container-fluid">
-  <form action="#">
+  
+  <form action="<%=ATBView.CONTACT_CTL%>" method="post">
 
     <label for="fname">Your Name</label>
     <input type="text" id="name" name="name" placeholder="Your name.." required>
@@ -58,6 +82,7 @@ input[type=submit]:hover {
 
     <label for="country">Select Your Country</label>
     <select id="country" name="country">
+    	<option value="india">India</option>
       <option value="australia">Australia</option>
       <option value="canada">Canada</option>
       <option value="usa">USA</option>
