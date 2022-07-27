@@ -144,11 +144,16 @@
 			</div>
 
 			<div class="text-container">
-				<h1>About us</h1>
-				<p>
-					FlyAway is a ticket-booking portal that lets people book flights on their website.
-				</p>
-				<a href="">Read More</a>
+				<h1>About US</h1>
+				<p>FlyAway is a ticket-booking portal that lets people book flights
+					on their website. In travel industry, FlyAway provides the best
+					Flight Booking Software with complete Flight Booking Quotation
+					System. Flight Booking Software is a complete flight booking
+					quotation system which automates flight booking process to help
+					book flight online for particular seats available from various
+					flights and increase revenue. FlyAway is online
+					booking system that helps end users to search and book flight
+					tickets online for particular seats from various flights.</p>
 			</div>
 
 		</div>
