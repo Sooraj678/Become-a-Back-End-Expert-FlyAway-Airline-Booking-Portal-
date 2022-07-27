@@ -96,7 +96,7 @@ $(function(){
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><%=welcomeMsg%><span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="welcomeAdmin.jsp">My Profile</a></li>
-          <li><a href="#">Change Password</a></li>
+          <li><a href="updateAdminPwd.jsp">Change Password</a></li>
           <li><a href="<%=ATBView.LOGIN_CTL%>?operation=<%=LoginCtl.OP_LOG_OUT%>">LogOut</a></li>
         </ul>
       </li>
