@@ -22,7 +22,7 @@ import in.co.air.line.ticket.util.ServletUtility;
 /**
  * Servlet implementation class FlightCtl
  */
-@WebServlet(name="FlightCtl",urlPatterns={"/ctl/FlightCtl"})
+@WebServlet(name="FlightCtl",urlPatterns={"/FlightCtl"})
 public class FlightCtl extends BaseCtl {
 	private static final long serialVersionUID = 1L;
        

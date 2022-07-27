@@ -24,7 +24,7 @@ import in.co.air.line.ticket.util.ServletUtility;
 /**
  * Servlet implementation class BookListCtl
  */
-@WebServlet(name = "BookListCtl", urlPatterns = { "/ctl/BookListCtl" })
+@WebServlet(name = "BookListCtl", urlPatterns = { "/BookListCtl" })
 public class BookListCtl extends BaseCtl {
 	private static final long serialVersionUID = 1L;
        

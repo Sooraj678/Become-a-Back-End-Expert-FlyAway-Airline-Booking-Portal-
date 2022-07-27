@@ -84,7 +84,7 @@ $(function(){
       <%if(userBean.getRoleId()==1){%>
       <li><a href="<%=ATBView.FLIGHT_CTL%>">Add Flight</a></li>
           <li><a href="<%=ATBView.FLIGHT_LIST_CTL%>">Flight Report</a></li>
-          <li><a href="<%=ATBView.BOOK_LIST_CTL%>">Book Ticket Report</a></li>
+          <li><a href="<%=ATBView.BOOK_LIST_CTL%>">Booked Ticket Report</a></li>
      
         
     
@@ -95,7 +95,7 @@ $(function(){
     
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><%=welcomeMsg%><span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">My Profile</a></li>
+          <li><a href="welcomeAdmin.jsp">My Profile</a></li>
           <li><a href="#">Change Password</a></li>
           <li><a href="<%=ATBView.LOGIN_CTL%>?operation=<%=LoginCtl.OP_LOG_OUT%>">LogOut</a></li>
         </ul>

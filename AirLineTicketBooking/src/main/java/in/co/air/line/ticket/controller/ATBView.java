@@ -43,13 +43,13 @@ public interface ATBView {
 	public String USER_CTL = APP_CONTEXT + "/ctl/UserCtl";
 	public String USER_LIST_CTL = APP_CONTEXT + "/ctl/UserListCtl";
 	
-	public String FLIGHT_CTL = APP_CONTEXT + "/ctl/FlightCtl";
-	public String FLIGHT_LIST_CTL = APP_CONTEXT + "/ctl/FlightListCtl";
+	public String FLIGHT_CTL = APP_CONTEXT + "/FlightCtl";
+	public String FLIGHT_LIST_CTL = APP_CONTEXT + "/FlightListCtl";
 	
 	public String INDEX_CTL = APP_CONTEXT + "/IndexCtl";
 	
 	public String BOOK_CTL = APP_CONTEXT + "/BookCtl";
-	public String BOOK_LIST_CTL = APP_CONTEXT + "/ctl/BookListCtl";
+	public String BOOK_LIST_CTL = APP_CONTEXT + "/BookListCtl";
 	
 	public String USER_REGISTRATION_CTL = APP_CONTEXT + "/UserRegistrationCtl";
 	public String LOGIN_CTL = APP_CONTEXT + "/LoginCtl";
