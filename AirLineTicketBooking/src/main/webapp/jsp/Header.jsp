@@ -107,7 +107,7 @@ $(function(){
       <li><a href="<%=ATBView.LOGIN_CTL%>">Admin Login</a></li>
       <li><a href="#"><%=welcomeMsg%></a></li>
       <li><a href="about.jsp">About</a></li>
-      <li><a href="#">For Any Query</a></li>
+      <li><a href="contact.jsp">Send Your Query</a></li>
     
     
     <%} %>
