@@ -85,7 +85,6 @@ $(function(){
       <li><a href="<%=ATBView.FLIGHT_CTL%>">Add Flight</a></li>
           <li><a href="<%=ATBView.FLIGHT_LIST_CTL%>">Flight Report</a></li>
           <li><a href="<%=ATBView.BOOK_LIST_CTL%>">Book Ticket Report</a></li>
-          <li><a href="./jsp/about.jsp">About US</a></li>
      
         
     
@@ -107,8 +106,8 @@ $(function(){
   		<li><a href="<%=ATBView.INDEX_CTL%>">Flight</a></li>
       <li><a href="<%=ATBView.LOGIN_CTL%>">Admin Login</a></li>
       <li><a href="#"><%=welcomeMsg%></a></li>
-      <li><a href="./jsp/about.jsp">About US</a></li>
-      <li><a href="#">Contact US</a></li>
+      <li><a href="about.jsp">About</a></li>
+      <li><a href="#">For Any Query</a></li>
     
     
     <%} %>

@@ -25,7 +25,7 @@
 <div class="footer">
   <h5>&copy; Copyright 2022 | AirLine Ticket Booking | All Rights Reserved by FlyAway-An Airline Booking Portal</h5>
   Read about Fly Away  <a style="color: #ffab91;"
-				href="aboutUS.jsp"> <b> About US</b></a>
+				href="about.jsp"> <b> About US</b></a>
 </div>
 </body>
 </html>
