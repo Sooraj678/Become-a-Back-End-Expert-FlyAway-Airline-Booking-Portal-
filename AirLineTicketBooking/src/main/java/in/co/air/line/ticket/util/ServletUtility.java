@@ -12,8 +12,6 @@ import in.co.air.line.ticket.bean.BaseBean;
 import in.co.air.line.ticket.controller.ATBView;
 import in.co.air.line.ticket.controller.BaseCtl;
 
-
-
 /**
  * This class provides utility operation for Servlet container like forward,
  * redirect, handle generic exception=same time exception, manage success and

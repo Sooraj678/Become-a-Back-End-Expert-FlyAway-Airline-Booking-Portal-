@@ -25,7 +25,7 @@ import in.co.air.line.ticket.util.ServletUtility;
 @WebServlet(name = "FlightListCtl", urlPatterns = { "/FlightListCtl" })
 public class FlightListCtl extends BaseCtl {
 	private static final long serialVersionUID = 1L;
-       
+
 	private static Logger log = Logger.getLogger(FlightListCtl.class);
 
 	/**
@@ -45,9 +45,11 @@ public class FlightListCtl extends BaseCtl {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		log.debug("FlightListCtl doGet method start");
 		List list = null;
 		int pageNo = 1;
@@ -74,9 +76,11 @@ public class FlightListCtl extends BaseCtl {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		log.debug("FlightListCtl doPost method start");
 		List list = null;
 

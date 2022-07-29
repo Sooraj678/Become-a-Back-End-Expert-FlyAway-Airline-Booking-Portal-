@@ -19,7 +19,6 @@ import in.co.air.line.ticket.util.DataValidator;
 import in.co.air.line.ticket.util.PropertyReader;
 import in.co.air.line.ticket.util.ServletUtility;
 
-
 /**
  * Servlet implementation class LoginCtl
  */
@@ -38,14 +37,14 @@ import in.co.air.line.ticket.util.ServletUtility;
 public class LoginCtl extends BaseCtl {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	public static final String OP_REGISTER = "Register";
 	public static final String OP_SIGN_IN = "SignIn";
 	public static final String OP_SIGN_UP = "SignUp";
 	public static final String OP_LOG_OUT = "logout";
 	public static String HIT_URI = null;
-	
-	private  static Logger log = Logger.getLogger(LoginCtl.class);
+
+	private static Logger log = Logger.getLogger(LoginCtl.class);
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -65,22 +64,21 @@ public class LoginCtl extends BaseCtl {
 	protected boolean validate(HttpServletRequest request) {
 
 		log.debug("LoginCtl Method validate Started");
-		
+
 		boolean pass = true;
-		
+
 		String op = request.getParameter("operation");
-		
+
 		if (OP_SIGN_UP.equals(op) || OP_LOG_OUT.equals(op)) {
 			return pass;
 		}
-		
-		
+
 		String login = request.getParameter("login");
-		
+
 		if (DataValidator.isNull(login)) {
 			request.setAttribute("login", PropertyReader.getValue("error.require", "Login Id"));
 			pass = false;
-		
+
 		} else if (!DataValidator.isEmail(login)) {
 			request.setAttribute("login", PropertyReader.getValue("error.email", "Login Id "));
 			pass = false;
@@ -105,11 +103,11 @@ public class LoginCtl extends BaseCtl {
 		log.debug("LoginCtl Method populateBean Started");
 
 		UserBean bean = new UserBean();
-		
+
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
-		
+
 		bean.setLogin(DataUtility.getString(request.getParameter("login")));
-		
+
 		bean.setPassword(DataUtility.getString(request.getParameter("password")));
 
 		log.debug("LOginCtl Method PopulatedBean End");
@@ -127,15 +125,14 @@ public class LoginCtl extends BaseCtl {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		log.debug("Method doGet Started");
-		
-		
+
 		HttpSession session = request.getSession(true);
 		String op = DataUtility.getString(request.getParameter("operation"));
-		
+
 		UserModel model = new UserModel();
-		
+
 		long id = DataUtility.getLong(request.getParameter("id"));
 
 		if (id > 0) {
@@ -143,7 +140,7 @@ public class LoginCtl extends BaseCtl {
 			try {
 				userBean = model.findByPK(id);
 				ServletUtility.setBean(userBean, request);
-		
+
 			} catch (Exception e) {
 				log.error(e);
 				ServletUtility.handleException(e, request, response);
@@ -153,7 +150,7 @@ public class LoginCtl extends BaseCtl {
 			session = request.getSession(false);
 			session.invalidate();
 			ServletUtility.setSuccessMessage("You have been logged out successfully", request);
-			
+
 			ServletUtility.forward(ATBView.LOGIN_VIEW, request, response);
 			return;
 		}
@@ -175,34 +172,29 @@ public class LoginCtl extends BaseCtl {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
-		
+
 		log.debug(" LoginCtl Method doPost Started");
-		
+
 		HttpSession session = request.getSession(true);
-		
+
 		String op = DataUtility.getString(request.getParameter("operation"));
 		// get Model
 		UserModel model = new UserModel();
-		
+
 		long id = DataUtility.getLong(request.getParameter("id"));
-		
-		
+
 		if (OP_SIGN_IN.equalsIgnoreCase(op)) {
 			UserBean bean = (UserBean) populateBean(request);
 			try {
 				bean = model.authenticate(bean.getLogin(), bean.getPassword());
-				
+
 				if (bean != null) {
 					session.setAttribute("user", bean);
 					session.setMaxInactiveInterval(10 * 6000);
 
-					
 					// save state of session remember URL
 					String uri = request.getParameter("uri");
-					
-					
+
 					if (uri == null || "null".equalsIgnoreCase(uri)) {
 						ServletUtility.redirect(ATBView.WELCOME_CTL, request, response);
 						return;
@@ -219,15 +211,14 @@ public class LoginCtl extends BaseCtl {
 			} catch (ApplicationException e) {
 				log.error(e);
 				ServletUtility.handleException(e, request, response);
-				
+
 				return;
 			}
 		} else if (OP_SIGN_UP.equalsIgnoreCase(op)) {
 			ServletUtility.redirect(ATBView.USER_REGISTRATION_CTL, request, response);
-		return;
+			return;
 		}
-		
-		
+
 		ServletUtility.forward(getView(), request, response);
 		log.debug("UserCtl Method doPost Ended");
 	}

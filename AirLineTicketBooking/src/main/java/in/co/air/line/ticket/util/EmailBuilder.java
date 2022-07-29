@@ -15,8 +15,7 @@ public class EmailBuilder {
 	/**
 	 * Returns Successful User Registration Message
 	 *
-	 * @param map
-	 *            : Message parameters
+	 * @param map : Message parameters
 	 * @return
 	 */
 
@@ -48,8 +47,7 @@ public class EmailBuilder {
 	/**
 	 * Returns Email message of Forget Password
 	 *
-	 * @param map
-	 *            : params
+	 * @param map : params
 	 * @return
 	 */
 

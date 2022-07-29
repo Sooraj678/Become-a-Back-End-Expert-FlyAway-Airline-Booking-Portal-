@@ -19,7 +19,6 @@ import in.co.air.line.ticket.util.EmailMessage;
 import in.co.air.line.ticket.util.EmailUtility;
 import in.co.air.line.ticket.util.JDBCDataSource;
 
-
 /**
  * JDBC Implementation of UserModel
  * 
@@ -29,7 +28,6 @@ import in.co.air.line.ticket.util.JDBCDataSource;
  */
 public class UserModel {
 	private static Logger log = Logger.getLogger(UserModel.class);
-	
 
 	public Integer nextPK() throws DatabaseException {
 		log.debug("Model nextPK Started");
@@ -63,7 +61,7 @@ public class UserModel {
 	 * 
 	 */
 	public long add(UserBean bean) throws ApplicationException, DuplicateRecordException {
-		
+
 		Connection conn = null;
 		int pk = 0;
 
@@ -94,7 +92,7 @@ public class UserModel {
 			conn.commit(); // End transaction
 			pstmt.close();
 		} catch (Exception e) {
-		
+
 			try {
 				conn.rollback();
 			} catch (Exception ex) {
@@ -105,7 +103,7 @@ public class UserModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		
+
 		return pk;
 	}
 
@@ -116,7 +114,7 @@ public class UserModel {
 	 * @throws DatabaseException
 	 */
 	public void delete(UserBean bean) throws ApplicationException {
-		
+
 		Connection conn = null;
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -128,7 +126,7 @@ public class UserModel {
 			pstmt.close();
 
 		} catch (Exception e) {
-		
+
 			try {
 				conn.rollback();
 			} catch (Exception ex) {
@@ -138,14 +136,13 @@ public class UserModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		
+
 	}
 
 	/**
 	 * Find User by Login
 	 * 
-	 * @param login
-	 *            : get parameter
+	 * @param login : get parameter
 	 * @return bean
 	 * @throws DatabaseException
 	 */
@@ -191,8 +188,7 @@ public class UserModel {
 	/**
 	 * Find User by PK
 	 * 
-	 * @param pk
-	 *            : get parameter
+	 * @param pk : get parameter
 	 * @return bean
 	 * @throws DatabaseException
 	 */
@@ -254,9 +250,9 @@ public class UserModel {
 		try {
 			conn = JDBCDataSource.getConnection();
 			conn.setAutoCommit(false); // Begin transaction
-			PreparedStatement pstmt = conn.prepareStatement(
-					"UPDATE A_USER SET FIRSTNAME=?,LASTNAME=?,LOGIN=?,PASSWORD=?,ROLEID=?,"
-					+ "CREATEDBY=?,MODIFIEDBY=?,CREATEDDATETIME=?,MODIFIEDDATETIME=? WHERE ID=?");
+			PreparedStatement pstmt = conn
+					.prepareStatement("UPDATE A_USER SET FIRSTNAME=?,LASTNAME=?,LOGIN=?,PASSWORD=?,ROLEID=?,"
+							+ "CREATEDBY=?,MODIFIEDBY=?,CREATEDDATETIME=?,MODIFIEDDATETIME=? WHERE ID=?");
 			pstmt.setString(1, bean.getFirstName());
 			pstmt.setString(2, bean.getLastName());
 			pstmt.setString(3, bean.getLogin());
@@ -288,8 +284,7 @@ public class UserModel {
 	/**
 	 * Search User
 	 * 
-	 * @param bean
-	 *            : Search Parameters
+	 * @param bean : Search Parameters
 	 * @throws DatabaseException
 	 */
 
@@ -301,12 +296,9 @@ public class UserModel {
 	 * Search User with pagination
 	 * 
 	 * @return list : List of Users
-	 * @param bean
-	 *            : Search Parameters
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
+	 * @param bean     : Search Parameters
+	 * @param pageNo   : Current Page No.
+	 * @param pageSize : Size of Page
 	 * 
 	 * @throws DatabaseException
 	 */
@@ -331,12 +323,10 @@ public class UserModel {
 			if (bean.getPassword() != null && bean.getPassword().length() > 0) {
 				sql.append(" AND PASSWORD like '" + bean.getPassword() + "%'");
 			}
-			
+
 			if (bean.getRoleId() > 0) {
 				sql.append(" AND ROLEID = " + bean.getRoleId());
 			}
-			
-		
 
 		}
 
@@ -349,7 +339,7 @@ public class UserModel {
 			// sql.append(" limit " + pageNo + "," + pageSize);
 		}
 
-		System.out.println("user model search  :"+sql);
+		System.out.println("user model search  :" + sql);
 		ArrayList list = new ArrayList();
 		Connection conn = null;
 		try {
@@ -398,10 +388,8 @@ public class UserModel {
 	 * Get List of User with pagination
 	 * 
 	 * @return list : List of users
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
+	 * @param pageNo   : Current Page No.
+	 * @param pageSize : Size of Page
 	 * @throws DatabaseException
 	 */
 
@@ -416,8 +404,7 @@ public class UserModel {
 			sql.append(" limit " + pageNo + "," + pageSize);
 		}
 
-		
-		System.out.println("sql in list user :"+sql);
+		System.out.println("sql in list user :" + sql);
 		Connection conn = null;
 
 		try {
@@ -453,12 +440,9 @@ public class UserModel {
 	}
 
 	/**
-	 * @param id
-	 *            : long id
-	 * @param old
-	 *            password : String oldPassword
-	 * @param new
-	 *            password : String newPassword
+	 * @param id  : long id
+	 * @param old password : String oldPassword
+	 * @param new password : String newPassword
 	 * @throws DatabaseException
 	 */
 
@@ -499,8 +483,6 @@ public class UserModel {
 		log.debug("Model authenticate End");
 		return bean;
 	}
-
-	
 
 	/**
 	 * Get User Roles
@@ -549,82 +531,76 @@ public class UserModel {
 	}
 
 	/**
-	 * @param id
-	 *            : long id
-	 * @param old
-	 *            password : String oldPassword
-	 * @param newpassword
-	 *            : String newPassword
+	 * @param id          : long id
+	 * @param old         password : String oldPassword
+	 * @param newpassword : String newPassword
 	 * @throws org.omg.CORBA.portable.ApplicationException
 	 * @throws DatabaseException
 	 */
 
-		public boolean changePassword(Long id, String oldPassword, String newPassword)
-				throws RecordNotFoundException, ApplicationException {
+	public boolean changePassword(Long id, String oldPassword, String newPassword)
+			throws RecordNotFoundException, ApplicationException {
 
-			log.debug("model changePassword Started");
-			
-			boolean flag = false;
-			
-			UserBean beanExist = null;
+		log.debug("model changePassword Started");
 
-			beanExist = findByPK(id);
-			
-			if (beanExist != null && beanExist.getPassword().equals(oldPassword)) {
-				beanExist.setPassword(newPassword);
-				try {
-					update(beanExist);
-				} catch (DuplicateRecordException e) {
-					log.error(e);
-					throw new ApplicationException("LoginId is already exist");
-				}
-				flag = true;
-			} else {
-				throw new RecordNotFoundException("Old password is Invalid");
-			}
+		boolean flag = false;
 
-			HashMap<String, String> map = new HashMap<String, String>();
+		UserBean beanExist = null;
 
-			map.put("login", beanExist.getLogin());
-			map.put("password", beanExist.getPassword());
-			map.put("firstName", beanExist.getFirstName());
-			map.put("lastName", beanExist.getLastName());
+		beanExist = findByPK(id);
 
-			String message = EmailBuilder.getChangePasswordMessage(map);
-
-			EmailMessage msg = new EmailMessage();
-
-			msg.setTo(beanExist.getLogin());
-			msg.setSubject("SUNARYS ORS Password has been changed Successfully.");
-			msg.setMessage(message);
-			msg.setMessageType(EmailMessage.HTML_MSG);
-
+		if (beanExist != null && beanExist.getPassword().equals(oldPassword)) {
+			beanExist.setPassword(newPassword);
 			try {
-				EmailUtility.sendMail(msg);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				update(beanExist);
+			} catch (DuplicateRecordException e) {
+				log.error(e);
+				throw new ApplicationException("LoginId is already exist");
 			}
-
-			log.debug("Model changePassword End");
-			return flag;
-
+			flag = true;
+		} else {
+			throw new RecordNotFoundException("Old password is Invalid");
 		}
 
-	
+		HashMap<String, String> map = new HashMap<String, String>();
+
+		map.put("login", beanExist.getLogin());
+		map.put("password", beanExist.getPassword());
+		map.put("firstName", beanExist.getFirstName());
+		map.put("lastName", beanExist.getLastName());
+
+		String message = EmailBuilder.getChangePasswordMessage(map);
+
+		EmailMessage msg = new EmailMessage();
+
+		msg.setTo(beanExist.getLogin());
+		msg.setSubject("SUNARYS ORS Password has been changed Successfully.");
+		msg.setMessage(message);
+		msg.setMessageType(EmailMessage.HTML_MSG);
+
+		try {
+			EmailUtility.sendMail(msg);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		log.debug("Model changePassword End");
+		return flag;
+
+	}
 
 	/**
 	 * Register a user
 	 * 
 	 * @param bean
 	 * @throws ApplicationException
-	 * @throws DuplicateRecordException
-	 *             : throws when user already exists
+	 * @throws DuplicateRecordException                    : throws when user
+	 *                                                     already exists
 	 * @throws org.omg.CORBA.portable.ApplicationException
 	 */
 
-	public long registerUser(UserBean bean)
-			throws ApplicationException, DuplicateRecordException {
+	public long registerUser(UserBean bean) throws ApplicationException, DuplicateRecordException {
 
 		log.debug("Model add Started");
 
@@ -656,63 +632,54 @@ public class UserModel {
 	 * Reset Password of User with auto generated Password
 	 * 
 	 * @return boolean : true if success otherwise false
-	 * @param login
-	 *            : User Login
+	 * @param login : User Login
 	 * @throws ApplicationException
 	 * @throws org.omg.CORBA.portable.ApplicationException
-	 * @throws RecordNotFoundException
-	 *             : if user not found
+	 * @throws RecordNotFoundException                     : if user not found
 	 */
 
-	/*public boolean resetPassword(UserBean bean)
-			throws ApplicationException, org.omg.CORBA.portable.ApplicationException {
-
-		String newPassword = String.valueOf(new Date().getTime()).substring(0, 4);
-		UserBean userData = findByPK(bean.getId());
-		userData.setPassword(newPassword);
-
-		try {
-			update(userData);
-		} catch (DuplicateRecordException e) {
-			return false;
-		}
-
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("login", bean.getLogin());
-		map.put("password", bean.getPassword());
-		map.put("firstName", bean.getFirstName());
-		map.put("lastName", bean.getLastName());
-
-		String message = EmailBuilder.getForgetPasswordMessage(map);
-
-		EmailMessage msg = new EmailMessage();
-
-		msg.setTo(bean.getLogin());
-		msg.setSubject("Password has been reset");
-		msg.setMessage(message);
-		msg.setMessageType(EmailMessage.HTML_MSG);
-
-		EmailUtility.sendMail(msg);
-
-		return true;
-	}*/
+	/*
+	 * public boolean resetPassword(UserBean bean) throws ApplicationException,
+	 * org.omg.CORBA.portable.ApplicationException {
+	 * 
+	 * String newPassword = String.valueOf(new Date().getTime()).substring(0, 4);
+	 * UserBean userData = findByPK(bean.getId());
+	 * userData.setPassword(newPassword);
+	 * 
+	 * try { update(userData); } catch (DuplicateRecordException e) { return false;
+	 * }
+	 * 
+	 * HashMap<String, String> map = new HashMap<String, String>(); map.put("login",
+	 * bean.getLogin()); map.put("password", bean.getPassword());
+	 * map.put("firstName", bean.getFirstName()); map.put("lastName",
+	 * bean.getLastName());
+	 * 
+	 * String message = EmailBuilder.getForgetPasswordMessage(map);
+	 * 
+	 * EmailMessage msg = new EmailMessage();
+	 * 
+	 * msg.setTo(bean.getLogin()); msg.setSubject("Password has been reset");
+	 * msg.setMessage(message); msg.setMessageType(EmailMessage.HTML_MSG);
+	 * 
+	 * EmailUtility.sendMail(msg);
+	 * 
+	 * return true; }
+	 */
 
 	/**
 	 * Send the password of User to his Email
 	 * 
 	 * @return boolean : true if success otherwise false
-	 * @param login
-	 *            : User Login
+	 * @param login : User Login
 	 * @throws ApplicationException
-	 * @throws RecordNotFoundException
-	 *             : if user not found
+	 * @throws RecordNotFoundException : if user not found
 	 * 
 	 */
 
 	public boolean forgetPassword(String login)
 			throws ApplicationException, RecordNotFoundException, ApplicationException {
 		UserBean userData = findByLogin(login);
-		
+
 		boolean flag = false;
 
 		if (userData == null) {

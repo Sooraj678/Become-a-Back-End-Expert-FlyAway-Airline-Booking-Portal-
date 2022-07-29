@@ -15,7 +15,6 @@ import in.co.air.line.ticket.util.DataUtility;
 import in.co.air.line.ticket.util.DataValidator;
 import in.co.air.line.ticket.util.ServletUtility;
 
-
 /**
  * Servlet implementation class BaseCtl
  */
@@ -28,13 +27,12 @@ import in.co.air.line.ticket.util.ServletUtility;
  * @Copyright (c) Navigable Set
  */
 @WebServlet("/BaseCtl")
-public abstract class BaseCtl extends HttpServlet
-{
-	private static final Logger log=Logger.getLogger(BaseCtl.class);
+public abstract class BaseCtl extends HttpServlet {
+	private static final Logger log = Logger.getLogger(BaseCtl.class);
 	/**
 	 * Generic message key constant
 	 */
-	
+
 	public static final String OP_SAVE = "Save";
 	public static final String OP_CANCEL = "Cancel";
 	public static final String OP_DELETE = "Delete";
@@ -49,7 +47,7 @@ public abstract class BaseCtl extends HttpServlet
 	public static final String OP_LOG_OUT = "Logout";
 	public static final String OP_RESET = "Reset";
 	public static final String OP_PAYMENT = "Process To PayMent";
-	
+
 	public static final String OP_PAYMENT_BOOK = "Payment and Book";
 
 	/**
@@ -62,21 +60,20 @@ public abstract class BaseCtl extends HttpServlet
 	 */
 	public static final String MSG_ERROR = "error";
 
-
 	public BaseCtl() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	/**
 	 * Validate input Data Entered By User
 	 * 
 	 * @param request
-	 * @return 
+	 * @return
 	 */
 
 	protected boolean validate(HttpServletRequest request) {
 		return true;
-		
+
 	}
 
 	/**
@@ -105,11 +102,10 @@ public abstract class BaseCtl extends HttpServlet
 	 * @param request
 	 * @return
 	 */
-	
-	
+
 	protected BaseBean populateDTO(BaseBean dto, HttpServletRequest request) {
 		log.debug("BaseCtl populate DTO method start");
-	
+
 		String createdBy = request.getParameter("createdBy");
 		String modifiedBy = null;
 
@@ -124,7 +120,7 @@ public abstract class BaseCtl extends HttpServlet
 			modifiedBy = userbean.getLogin();
 
 			// If record is created first time
-			if ("null".equalsIgnoreCase(createdBy)|| DataValidator.isNull(createdBy)) {
+			if ("null".equalsIgnoreCase(createdBy) || DataValidator.isNull(createdBy)) {
 				createdBy = modifiedBy;
 			}
 
@@ -142,27 +138,28 @@ public abstract class BaseCtl extends HttpServlet
 		}
 
 		dto.setModifiedDatetime(DataUtility.getCurrentTimestamp());
-		
+
 		log.debug("BaseCtl populate DTO method end");
 		return dto;
 	}
 
 	@Override
-	protected void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		log.debug("BaseCtl service method start");
-		
+
 		// Load the preloaded data required to display at HTML form
 		preload(request);
-
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
 		// Check if operation is not DELETE, VIEW, CANCEL, and NULL then
 		// perform input data validation
 
-		System.out.println("operation ="+op);
+		System.out.println("operation =" + op);
 
-		if (DataValidator.isNotNull(op) && !OP_CANCEL.equalsIgnoreCase(op)&& !OP_VIEW.equalsIgnoreCase(op)&& !OP_DELETE.equalsIgnoreCase(op)&&!OP_RESET.equalsIgnoreCase(op)) {
+		if (DataValidator.isNotNull(op) && !OP_CANCEL.equalsIgnoreCase(op) && !OP_VIEW.equalsIgnoreCase(op)
+				&& !OP_DELETE.equalsIgnoreCase(op) && !OP_RESET.equalsIgnoreCase(op)) {
 			// Check validation, If fail then send back to page with error
 			// messages
 			if (!validate(request)) {
@@ -172,7 +169,7 @@ public abstract class BaseCtl extends HttpServlet
 				return;
 			}
 		}
-		
+
 		log.debug("BaseCtl service method end");
 		super.service(request, response);
 	}
@@ -183,5 +180,5 @@ public abstract class BaseCtl extends HttpServlet
 	 * @return
 	 */
 	protected abstract String getView();
-	
+
 }

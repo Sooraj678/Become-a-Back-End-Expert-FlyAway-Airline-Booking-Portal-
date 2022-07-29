@@ -8,8 +8,7 @@ package in.co.air.line.ticket.bean;
  * @Copyright (c) Navigable Set
  * 
  */
-public interface DropdownListBean
-{
+public interface DropdownListBean {
 	public String getKey();
 
 	public String getValue();

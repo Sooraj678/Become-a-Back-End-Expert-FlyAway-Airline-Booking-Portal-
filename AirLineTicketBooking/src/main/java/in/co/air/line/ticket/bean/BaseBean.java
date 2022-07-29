@@ -46,8 +46,7 @@ public abstract class BaseBean implements DropdownListBean, Comparable<BaseBean>
 	}
 
 	/**
-	 * @param Id
-	 *            To set Child ID
+	 * @param Id To set Child ID
 	 */
 	public void setId(long id) {
 		this.id = id;
@@ -61,8 +60,7 @@ public abstract class BaseBean implements DropdownListBean, Comparable<BaseBean>
 	}
 
 	/**
-	 * @param CreatedBy
-	 *            To set Child Creatd By
+	 * @param CreatedBy To set Child Creatd By
 	 */
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
@@ -76,8 +74,7 @@ public abstract class BaseBean implements DropdownListBean, Comparable<BaseBean>
 	}
 
 	/**
-	 * @param Modified
-	 *            by To set Child ModifiedBY
+	 * @param Modified by To set Child ModifiedBY
 	 */
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
@@ -92,8 +89,7 @@ public abstract class BaseBean implements DropdownListBean, Comparable<BaseBean>
 	}
 
 	/**
-	 * @param Created
-	 *            Date and Time To set Child Created dATE aND tiME
+	 * @param Created Date and Time To set Child Created dATE aND tiME
 	 */
 	public void setCreatedDatetime(Timestamp createdDatetime) {
 		this.createdDatetime = createdDatetime;
@@ -108,8 +104,7 @@ public abstract class BaseBean implements DropdownListBean, Comparable<BaseBean>
 	}
 
 	/**
-	 * @param Modified
-	 *            By To set Child ModiFied By
+	 * @param Modified By To set Child ModiFied By
 	 */
 	public void setModifiedDatetime(Timestamp modifiedDatetime) {
 		this.modifiedDatetime = modifiedDatetime;

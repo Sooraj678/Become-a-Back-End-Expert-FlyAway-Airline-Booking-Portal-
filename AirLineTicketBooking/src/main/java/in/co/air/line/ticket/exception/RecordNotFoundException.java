@@ -9,12 +9,10 @@ package in.co.air.line.ticket.exception;
  * 
  */
 
-public class RecordNotFoundException extends Exception
-{
+public class RecordNotFoundException extends Exception {
 
 	/**
-	 * @param msg
-	 *            error message
+	 * @param msg error message
 	 */
 	public RecordNotFoundException(String msg) {
 		super(msg);

@@ -60,7 +60,8 @@ public class FlightModel {
 			// Get auto-generated next primary key
 			System.out.println(pk + " in ModelJDBC");
 			conn.setAutoCommit(false); // Begin transaction
-			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO A_Flight VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement pstmt = conn
+					.prepareStatement("INSERT INTO A_Flight VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			pstmt.setInt(1, pk);
 			pstmt.setString(2, bean.getFlightNo());
 			pstmt.setString(3, bean.getFightName());
@@ -141,8 +142,7 @@ public class FlightModel {
 	/**
 	 * Find User by PK
 	 * 
-	 * @param pk
-	 *            : get parameter
+	 * @param pk : get parameter
 	 * @return bean
 	 * @throws DatabaseException
 	 */
@@ -272,12 +272,9 @@ public class FlightModel {
 	 * Search User with pagination
 	 * 
 	 * @return list : List of Users
-	 * @param bean
-	 *            : Search Parameters
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
+	 * @param bean     : Search Parameters
+	 * @param pageNo   : Current Page No.
+	 * @param pageSize : Size of Page
 	 * 
 	 * @throws DatabaseException
 	 */
@@ -303,7 +300,7 @@ public class FlightModel {
 				sql.append(" AND FromCity like '" + bean.getFromCity() + "%'");
 			}
 			if (bean.getDate() != null && bean.getDate().getDate() > 0) {
-				sql.append(" AND Date = "+ new java.sql.Date(bean.getDate().getTime()));
+				sql.append(" AND Date = " + new java.sql.Date(bean.getDate().getTime()));
 			}
 
 		}
@@ -364,10 +361,8 @@ public class FlightModel {
 	 * Get List of User with pagination
 	 * 
 	 * @return list : List of users
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
+	 * @param pageNo   : Current Page No.
+	 * @param pageSize : Size of Page
 	 * @throws DatabaseException
 	 */
 

@@ -10,11 +10,9 @@ package in.co.air.line.ticket.exception;
  * 
  */
 
-public class ApplicationException  extends Exception
-{
+public class ApplicationException extends Exception {
 	/**
-	 * @param msg
-	 *            : Error message
+	 * @param msg : Error message
 	 */
 	public ApplicationException(String msg) {
 		super(msg);

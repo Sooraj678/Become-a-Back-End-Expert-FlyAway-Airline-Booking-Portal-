@@ -3,7 +3,7 @@ package in.co.air.line.ticket.bean;
 import java.util.Date;
 
 public class BookBean extends BaseBean {
-	
+
 	private long flightId;
 	private String flightName;
 	private String firstName;
@@ -15,16 +15,6 @@ public class BookBean extends BaseBean {
 	private long price;
 	private long finalPrice;
 	private Date bookDate;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	public Date getBookDate() {
 		return bookDate;
@@ -124,5 +114,4 @@ public class BookBean extends BaseBean {
 		return null;
 	}
 
-	
 }

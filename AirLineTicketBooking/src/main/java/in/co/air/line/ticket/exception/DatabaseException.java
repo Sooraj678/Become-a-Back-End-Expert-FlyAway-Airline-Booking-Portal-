@@ -10,14 +10,11 @@ package in.co.air.line.ticket.exception;
  *
  */
 
-public class DatabaseException  extends Exception
-{
+public class DatabaseException extends Exception {
 	/**
-    * @param msg
-    *            : Error message
-    */
-   public DatabaseException(String msg) {
-       super(msg);
-   }
+	 * @param msg : Error message
+	 */
+	public DatabaseException(String msg) {
+		super(msg);
+	}
 }
-

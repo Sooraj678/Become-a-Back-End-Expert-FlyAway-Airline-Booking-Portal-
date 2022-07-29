@@ -16,7 +16,7 @@ import in.co.air.line.ticket.exception.DuplicateRecordException;
 import in.co.air.line.ticket.util.JDBCDataSource;
 
 public class BookModel {
-	
+
 	private static Logger log = Logger.getLogger(BookModel.class);
 
 	public Integer nextPK() throws DatabaseException {
@@ -42,15 +42,15 @@ public class BookModel {
 		log.debug("Model nextPK End");
 		return pk + 1;
 	}
-	
+
 	public long add(BookBean bean) throws ApplicationException, DuplicateRecordException {
 
 		Connection conn = null;
 		int pk = 0;
 
-		FlightModel fModel=new FlightModel();
-		FlightBean fBean=fModel.findByPK(bean.getFlightId());
-		bean.setFinalPrice((fBean.getTicketPrice()*bean.getNoOfPerson()));
+		FlightModel fModel = new FlightModel();
+		FlightBean fBean = fModel.findByPK(bean.getFlightId());
+		bean.setFinalPrice((fBean.getTicketPrice() * bean.getNoOfPerson()));
 
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -58,9 +58,10 @@ public class BookModel {
 			// Get auto-generated next primary key
 			System.out.println(pk + " in ModelJDBC");
 			conn.setAutoCommit(false); // Begin transaction
-			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO A_Book VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement pstmt = conn
+					.prepareStatement("INSERT INTO A_Book VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			pstmt.setInt(1, pk);
-			pstmt.setLong(2,bean.getFlightId());
+			pstmt.setLong(2, bean.getFlightId());
 			pstmt.setString(3, fBean.getFightName());
 			pstmt.setString(4, bean.getFirstName());
 			pstmt.setString(5, bean.getLastName());
@@ -93,7 +94,7 @@ public class BookModel {
 
 		return pk;
 	}
-	
+
 	public BookBean findByName(String name) throws ApplicationException {
 		log.debug("Model findByLogin Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM A_Book WHERE firstName=?");
@@ -141,8 +142,7 @@ public class BookModel {
 	/**
 	 * Find User by PK
 	 * 
-	 * @param pk
-	 *            : get parameter
+	 * @param pk : get parameter
 	 * @return bean
 	 * @throws DatabaseException
 	 */
@@ -189,7 +189,7 @@ public class BookModel {
 		log.debug("Model findByPK End");
 		return bean;
 	}
-	
+
 	public void delete(BookBean bean) throws ApplicationException {
 
 		Connection conn = null;
@@ -215,14 +215,14 @@ public class BookModel {
 		}
 
 	}
-	
+
 	public void update(BookBean bean) throws ApplicationException, DuplicateRecordException {
 		log.debug("Model update Started");
 		Connection conn = null;
 
-		FlightModel fModel=new FlightModel();
-		FlightBean fBean=fModel.findByPK(bean.getFlightId());
-		bean.setFinalPrice((fBean.getTicketPrice()*bean.getNoOfPerson()));
+		FlightModel fModel = new FlightModel();
+		FlightBean fBean = fModel.findByPK(bean.getFlightId());
+		bean.setFinalPrice((fBean.getTicketPrice() * bean.getNoOfPerson()));
 
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -230,7 +230,7 @@ public class BookModel {
 			PreparedStatement pstmt = conn.prepareStatement(
 					"UPDATE A_Book SET FlightId=?,FlightName=?,FirstName=?,LastName=?,MobileNo=?,BookDate=?,EmailId=?,Address=?,NoOfPerson=?,Price=?,FinalPrice=?,"
 							+ "CREATEDBY=?,MODIFIEDBY=?,CREATEDDATETIME=?,MODIFIEDDATETIME=? WHERE ID=?");
-			pstmt.setLong(1,bean.getFlightId());
+			pstmt.setLong(1, bean.getFlightId());
 			pstmt.setString(2, fBean.getFightName());
 			pstmt.setString(3, bean.getFirstName());
 			pstmt.setString(4, bean.getLastName());
@@ -263,7 +263,7 @@ public class BookModel {
 		}
 		log.debug("Model update End");
 	}
-	
+
 	public List search(BookBean bean) throws ApplicationException {
 		return search(bean, 0, 0);
 	}
@@ -272,12 +272,9 @@ public class BookModel {
 	 * Search User with pagination
 	 * 
 	 * @return list : List of Users
-	 * @param bean
-	 *            : Search Parameters
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
+	 * @param bean     : Search Parameters
+	 * @param pageNo   : Current Page No.
+	 * @param pageSize : Size of Page
 	 * 
 	 * @throws DatabaseException
 	 */
@@ -302,8 +299,6 @@ public class BookModel {
 			if (bean.getEmailId() != null && bean.getEmailId().length() > 0) {
 				sql.append(" AND EmailId like '" + bean.getEmailId() + "%'");
 			}
-			
-			
 
 		}
 
@@ -355,7 +350,7 @@ public class BookModel {
 		log.debug("Model search End");
 		return list;
 	}
-	
+
 	public List list() throws ApplicationException {
 		return list(0, 0);
 	}
@@ -364,10 +359,8 @@ public class BookModel {
 	 * Get List of User with pagination
 	 * 
 	 * @return list : List of users
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
+	 * @param pageNo   : Current Page No.
+	 * @param pageSize : Size of Page
 	 * @throws DatabaseException
 	 */
 

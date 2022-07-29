@@ -1,6 +1,5 @@
 package in.co.air.line.ticket.util;
 
-
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,11 +9,10 @@ import java.util.Date;
  * 
  * @author Navigable Set
  * @version 1.0
-* @Copyright (c) Navigable Set
+ * @Copyright (c) Navigable Set
  */
 
-public class DataUtility 
-{
+public class DataUtility {
 	/**
 	 * Application Date Format
 	 */
@@ -27,7 +25,8 @@ public class DataUtility
 	 */
 	private static final SimpleDateFormat formatter = new SimpleDateFormat(APP_DATE_FORMAT);
 
-	//private static final SimpleDateFormat timeFormatter = new SimpleDateFormat(APP_TIME_FORMAT);
+	// private static final SimpleDateFormat timeFormatter = new
+	// SimpleDateFormat(APP_TIME_FORMAT);
 
 	/**
 	 * Trims and trailing and leading spaces of a String
@@ -50,7 +49,7 @@ public class DataUtility
 	 * @return
 	 */
 	public static String getStringData(Object val) {
-		
+
 		if (val != null) {
 			return val.toString();
 		} else {
@@ -92,25 +91,27 @@ public class DataUtility
 	 * @param val
 	 * @return
 	 */
-	 public static Date getDate(String val) {
-	        Date date = null;
-	        try {
-	            date = formatter.parse(val);
-	        } catch (Exception e) {
+	public static Date getDate(String val) {
+		Date date = null;
+		try {
+			date = formatter.parse(val);
+		} catch (Exception e) {
 
-	        }
-	        return date;
-	    }
+		}
+		return date;
+	}
 
 	public static Date getDate1(String val) {
 		Date date = null;
-		
+
 		try {
 			date = formatter.parse(val);
-			
-		}catch(Exception e){}
+
+		} catch (Exception e) {
+		}
 		return date;
 	}
+
 	/**
 	 * Converts Date into String
 	 * 
@@ -118,18 +119,17 @@ public class DataUtility
 	 * @return
 	 */
 	public static String getDateString(Date date) {
-		
+
 		try {
-		   if(date!=null) {
+			if (date != null) {
 				return formatter.format(date);
-			}
-			else{
+			} else {
 				return "";
 			}
 		} catch (Exception e) {
 			return "";
 		}
-		
+
 	}
 
 	/**
@@ -159,7 +159,7 @@ public class DataUtility
 		}
 		return timeStamp;
 	}
-	
+
 	/**
 	 * Converts String into Time
 	 * 
@@ -170,12 +170,13 @@ public class DataUtility
 
 		Timestamp timeStamp = null;
 		try {
-		//	timeStamp = new Timestamp((timeFormatter.parse(cdt)).getTime());
+			// timeStamp = new Timestamp((timeFormatter.parse(cdt)).getTime());
 		} catch (Exception e) {
 			return null;
 		}
 		return timeStamp;
 	}
+
 	/**
 	 * Converts Time into Long
 	 * 
@@ -189,7 +190,7 @@ public class DataUtility
 			return 0;
 		}
 	}
-	
+
 	/**
 	 * Provide Current time
 	 * 
@@ -206,25 +207,21 @@ public class DataUtility
 
 	}
 
-	public static void main(String[] args)
-	{
-		DataUtility d=new DataUtility();
-		
-		Date date=new Date();
-		//System.out.println(getDateString(date));
-	
-		//System.out.println(d.getCurrentTimestamp());
+	public static void main(String[] args) {
+		DataUtility d = new DataUtility();
+
+		Date date = new Date();
+		// System.out.println(getDateString(date));
+
+		// System.out.println(d.getCurrentTimestamp());
 		/*
 		 * String s1=""; System.out.println(getString("Ravi"));
-		 * System.out.println(s1.isEmpty());
-		 * System.out.println(getDate("21/01/1994")); System.out.println(new
-		 * Date());
+		 * System.out.println(s1.isEmpty()); System.out.println(getDate("21/01/1994"));
+		 * System.out.println(new Date());
 		 */
-		//System.out.println(getDate("01/21/1998"));
+		// System.out.println(getDate("01/21/1998"));
 
-		
-		System.out.println("formate date :"+getDate("12/09/1991"));
+		System.out.println("formate date :" + getDate("12/09/1991"));
 	}
 
 }
-

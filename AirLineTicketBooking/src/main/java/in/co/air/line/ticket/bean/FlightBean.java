@@ -3,8 +3,7 @@ package in.co.air.line.ticket.bean;
 import java.util.Date;
 
 public class FlightBean extends BaseBean {
-	
-	
+
 	private String flightNo;
 	private String fightName;
 	private String fromCity;
@@ -15,8 +14,6 @@ public class FlightBean extends BaseBean {
 	private String travelDuraion;
 	private long ticketPrice;
 	private String airPortName;
-	
-	
 
 	public String getFlightNo() {
 		return flightNo;

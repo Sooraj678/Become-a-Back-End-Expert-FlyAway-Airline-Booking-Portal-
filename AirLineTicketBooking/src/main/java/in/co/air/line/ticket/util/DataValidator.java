@@ -32,8 +32,7 @@ public class DataValidator {
 			return false;
 		}
 	}
-	
-	
+
 	public static boolean isRollNO(String val) {
 		String passregex = "^([0-9]{2}[A-Z]{2}[0-9]{1,})\\S$";
 
@@ -141,16 +140,14 @@ public class DataValidator {
 		}
 	}
 
-	/*public static boolean isIntegerName(String val) {
-		String match = "^[0-9]{3}$";
-
-		if (val.matches(match)) {
-			return true;
-		} else {
-			return false;
-		}
-
-	}*/
+	/*
+	 * public static boolean isIntegerName(String val) { String match =
+	 * "^[0-9]{3}$";
+	 * 
+	 * if (val.matches(match)) { return true; } else { return false; }
+	 * 
+	 * }
+	 */
 
 	/**
 	 * Checks if value is valid Email ID
@@ -210,8 +207,8 @@ public class DataValidator {
 		// System.out.println(isPhoneNo("9926913693"));
 		// System.out.println(isName("rohan jain"));
 		System.out.println(isInteger("87"));
-		System.out.println("os password :"+isPassword("Manoj@123"));
-		System.out.println("IS ROLL NO :"+isRollNO("18CS01"));
+		System.out.println("os password :" + isPassword("Manoj@123"));
+		System.out.println("IS ROLL NO :" + isRollNO("18CS01"));
 
 	}
 

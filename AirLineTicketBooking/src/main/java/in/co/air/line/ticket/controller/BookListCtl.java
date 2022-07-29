@@ -20,14 +20,13 @@ import in.co.air.line.ticket.util.DataUtility;
 import in.co.air.line.ticket.util.PropertyReader;
 import in.co.air.line.ticket.util.ServletUtility;
 
-
 /**
  * Servlet implementation class BookListCtl
  */
 @WebServlet(name = "BookListCtl", urlPatterns = { "/BookListCtl" })
 public class BookListCtl extends BaseCtl {
 	private static final long serialVersionUID = 1L;
-       
+
 	private static Logger log = Logger.getLogger(BookListCtl.class);
 
 	/**
@@ -47,19 +46,21 @@ public class BookListCtl extends BaseCtl {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		log.debug("BookListCtl doGet method start");
 		List list = null;
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
 
-		long bid=DataUtility.getLong(request.getParameter("Bid"));
+		long bid = DataUtility.getLong(request.getParameter("Bid"));
 		BookModel model = new BookModel();
 		BookBean bean = (BookBean) populateBean(request);
 		try {
-			
+
 			list = model.search(bean, pageNo, pageSize);
 			if (list == null || list.size() == 0) {
 				ServletUtility.setErrorMessage("No Record Found", request);
@@ -78,9 +79,11 @@ public class BookListCtl extends BaseCtl {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		log.debug("MovieListCtl doPost method start");
 		List list = null;
 
@@ -139,7 +142,7 @@ public class BookListCtl extends BaseCtl {
 		}
 
 		try {
-			
+
 			list = model.search(bean, pageNo, pageSize);
 			if (list == null || list.size() == 0) {
 				ServletUtility.setErrorMessage("NO Record Found", request);

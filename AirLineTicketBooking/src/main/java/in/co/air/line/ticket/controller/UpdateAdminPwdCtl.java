@@ -17,38 +17,42 @@ import in.co.air.line.ticket.util.JDBCDataSource;
 @WebServlet(name = "UpdateAdminPwdCtl", urlPatterns = { "/UpdateAdminPwdCtl" })
 public class UpdateAdminPwdCtl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UpdateAdminPwdCtl() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public UpdateAdminPwdCtl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
+
 		String email = request.getParameter("login");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String updatedPassword = request.getParameter("password");
 		int check = 0;
 		Connection conn;
-	    try {
-	    	conn = JDBCDataSource.getConnection();
+		try {
+			conn = JDBCDataSource.getConnection();
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("select *from a_user where login='" + email + "' and firstName='"
 					+ firstName + "' and lastName='" + lastName + "' ");
@@ -65,6 +69,5 @@ public class UpdateAdminPwdCtl extends HttpServlet {
 		}
 
 	}
-
 
 }

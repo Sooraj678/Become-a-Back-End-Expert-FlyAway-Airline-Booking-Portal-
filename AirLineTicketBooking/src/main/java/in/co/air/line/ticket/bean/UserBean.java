@@ -13,7 +13,6 @@ import java.util.Date;
  */
 public class UserBean extends BaseBean {
 
-	
 	/**
 	 * First Name of User
 	 */
@@ -37,10 +36,8 @@ public class UserBean extends BaseBean {
 	/**
 	 * Date of Birth of User
 	 */
-	
+
 	private long roleId;
-	
-	
 
 	/**
 	 * accessor
@@ -55,8 +52,7 @@ public class UserBean extends BaseBean {
 	}
 
 	/**
-	 * @param FirstName
-	 *            To set User FirstName
+	 * @param FirstName To set User FirstName
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -70,8 +66,7 @@ public class UserBean extends BaseBean {
 	}
 
 	/**
-	 * @param LastName
-	 *            To set User LastName
+	 * @param LastName To set User LastName
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
@@ -85,8 +80,7 @@ public class UserBean extends BaseBean {
 	}
 
 	/**
-	 * @param Login
-	 *            Id To set User Login ID
+	 * @param Login Id To set User Login ID
 	 */
 	public void setLogin(String login) {
 		this.login = login;
@@ -100,8 +94,7 @@ public class UserBean extends BaseBean {
 	}
 
 	/**
-	 * @param Password
-	 *            To set User Password
+	 * @param Password To set User Password
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -115,16 +108,11 @@ public class UserBean extends BaseBean {
 	}
 
 	/**
-	 * @param Confirm
-	 *            PAssword To set User Confirm Password
+	 * @param Confirm PAssword To set User Confirm Password
 	 */
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
 	}
-
-	
-
-	
 
 	/**
 	 * @return ROle Id Of User
@@ -134,15 +122,11 @@ public class UserBean extends BaseBean {
 	}
 
 	/**
-	 * @param Role
-	 *            Id To set User ROle Id
+	 * @param Role Id To set User ROle Id
 	 */
 	public void setRoleId(long roleId) {
 		this.roleId = roleId;
 	}
-
-	
-
 
 	public String getKey() {
 		return id + "";

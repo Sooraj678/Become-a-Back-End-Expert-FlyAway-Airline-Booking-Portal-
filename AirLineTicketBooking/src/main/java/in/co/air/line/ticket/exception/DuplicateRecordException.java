@@ -8,11 +8,9 @@ package in.co.air.line.ticket.exception;
  * @Copyright (c) Navigable Set
  * 
  */
-public class DuplicateRecordException  extends Exception
-{
+public class DuplicateRecordException extends Exception {
 	/**
-	 * @param msg
-	 *            error message
+	 * @param msg error message
 	 */
 	public DuplicateRecordException(String msg) {
 		super(msg);
