@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html >
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Flights</title>
@@ -96,8 +96,9 @@
 							</label>
 							<div class="controls col-md-8 ">
 								<input class="input-md  textinput textInput form-control"
-									maxlength="30" name="date" placeholder="Enter Date" readonly="readonly"
-									style="margin-bottom: 10px" type="text" id="datepicker"
+									maxlength="30" name="date" placeholder="Enter Date"
+									readonly="readonly" style="margin-bottom: 10px" type="text"
+									id="datepicker"
 									value="<%=DataUtility.getDateString(bean.getDate())%>" /> <font
 									color="red"><%=ServletUtility.getErrorMessage("date", request)%></font>
 							</div>
@@ -147,7 +148,7 @@
 								<input class="input-md  textinput textInput form-control"
 									maxlength="30" name="price" placeholder="Enter Ticket Price"
 									style="margin-bottom: 10px" type="text"
-									value="<%=(bean.getTicketPrice()==0)?"":bean.getTicketPrice()%>" />
+									value="<%=(bean.getTicketPrice() == 0) ? "" : bean.getTicketPrice()%>" />
 								<font color="red"><%=ServletUtility.getErrorMessage("price", request)%></font>
 							</div>
 						</div>
@@ -173,8 +174,9 @@
 							<div class="controls col-md-8 ">
 								<input type="submit" name="operation"
 									value="<%=FlightCtl.OP_SAVE%>"
-									class="btn btn-primary btn btn-info" />
-									 or <input type="submit" name="operation" value="<%=FlightCtl.OP_RESET %>" class="btn btn btn-primary"  />
+									class="btn btn-primary btn btn-info" /> or <input
+									type="submit" name="operation" value="<%=FlightCtl.OP_RESET%>"
+									class="btn btn btn-primary" />
 							</div>
 						</div>
 

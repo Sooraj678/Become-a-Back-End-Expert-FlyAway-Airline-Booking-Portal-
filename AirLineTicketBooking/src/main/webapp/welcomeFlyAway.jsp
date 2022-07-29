@@ -9,7 +9,6 @@
 <style>
 body {
 	background-image: url("images/welcomeImage.jpg");
-	
 	background-size: 1550px 605px;
 	background-repeat: no-repeat;
 }

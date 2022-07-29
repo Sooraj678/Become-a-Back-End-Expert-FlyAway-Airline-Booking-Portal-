@@ -11,7 +11,6 @@ body {
 	background-image: url("images/FlightBooking.jpg");
 	background-size: 1550px 680px;
 	background-repeat: no-repeat;
-	
 }
 
 .no-background {
@@ -21,12 +20,13 @@ body {
 <body>
 	<%@ include file="Header.jsp"%>
 	<h4 style="margin: 234px; font-family: inherit;">
-		Welcome to AirLine Ticket Booking.FlyAway is a <br> ticket-booking portal
-		that lets people book flights on their <br> website.In travel
-		industry,FlyAway provides the best Flight <br> Booking Software
-		with complete Flight <br> Booking Quotation System. FlyAway<br>is
-		online booking system that helps endUsers<br> to search and book flight
-		tickets online <br>for particular seats from various flights.
+		Welcome to AirLine Ticket Booking.FlyAway is a <br>
+		ticket-booking portal that lets people book flights on their <br>
+		website.In travel industry,FlyAway provides the best Flight <br>
+		Booking Software with complete Flight <br> Booking Quotation
+		System. FlyAway<br>is online booking system that helps endUsers<br>
+		to search and book flight tickets online <br>for particular seats
+		from various flights.
 	</h4>
 
 	<%@ include file="Footer.jsp"%>

@@ -9,7 +9,6 @@
 <style>
 body {
 	background-image: url("images/guestBG.jpg");
-	
 	background-size: 1550px 720px;
 	background-repeat: no-repeat;
 }
@@ -21,8 +20,12 @@ body {
 <body>
 	<%@ include file="../jsp/Header.jsp"%>
 	<h1 style="margin: 234px; font-family: inherit; color: white;">
-		<b>Welcome to AirLine <br>Ticket-Booking<br>For Booking of <br>Flight Please click here</b>
-		<br><a href="<%=ATBView.INDEX_CTL%>" style="color: blue; font-family: italic;"><b>Book Your Flight </b>!!</a>
+		<b>Welcome to AirLine <br>Ticket-Booking<br>For Booking
+			of <br>Flight Please click here
+		</b> <br>
+		<a href="<%=ATBView.INDEX_CTL%>"
+			style="color: blue; font-family: italic;"><b>Book Your Flight
+		</b>!!</a>
 	</h1>
 
 	<%@ include file="../jsp/Footer.jsp"%>

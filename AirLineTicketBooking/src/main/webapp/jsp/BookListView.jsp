@@ -6,7 +6,7 @@
 <%@page import="in.co.air.line.ticket.controller.BookListCtl"%>
 <%@page import="in.co.air.line.ticket.util.ServletUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +14,7 @@
 <title>Booked Ticket List</title>
 </head>
 <body>
-<%@ include file="Header.jsp"%>
+	<%@ include file="Header.jsp"%>
 	<form action="<%=ATBView.BOOK_LIST_CTL%>" method="post">
 		<div class="container">
 			<div class="row">
@@ -62,7 +62,7 @@
 									<th>No Of Person</th>
 									<th>Ticket Price</th>
 									<th>Final Price</th>
-									
+
 								</tr>
 							</thead>
 							<tbody>
@@ -79,7 +79,7 @@
 										bean = it.next();
 								%>
 								<tr>
-									
+
 									<td><%=bean.getFlightName()%></td>
 									<td><%=bean.getFirstName()+" "+bean.getLastName()%></td>
 									<td><%=bean.getMobileNo()%></td>
@@ -88,7 +88,7 @@
 									<td><%=bean.getNoOfPerson()%></td>
 									<td><%=bean.getPrice()%></td>
 									<td><%=bean.getFinalPrice()%></td>
-									
+
 								</tr>
 								<%
 									}
@@ -103,8 +103,8 @@
 								class="btn btn-primary btn btn-info"
 								value="<%=BookListCtl.OP_PREVIOUS%>"
 								<%=(pageNo == 1) ? "disabled" : ""%>></li>
-							
-						
+
+
 							<%
 								BookModel model = new BookModel();
 							%>
@@ -122,8 +122,8 @@
 		<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 			type="hidden" name="pageSize" value="<%=pageSize%>">
 	</form>
-<div style="margin-top: 168px">
-	<%@ include file="Footer.jsp"%>
-</div>	
+	<div style="margin-top: 168px">
+		<%@ include file="Footer.jsp"%>
+	</div>
 </body>
 </html>

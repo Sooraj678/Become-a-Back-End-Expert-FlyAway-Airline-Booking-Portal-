@@ -7,7 +7,7 @@
 <%@page import="in.co.air.line.ticket.controller.IndexCtl"%>
 <%@page import="in.co.air.line.ticket.util.ServletUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,7 +15,7 @@
 <title>Flight Lists</title>
 </head>
 <body>
-<%@ include file="jsp/Header.jsp"%>
+	<%@ include file="jsp/Header.jsp"%>
 	<form action="<%=ATBView.INDEX_CTL%>" method="post">
 		<div class="container">
 			<div class="row">
@@ -37,13 +37,12 @@
 									class="input-md  textinput textInput form-control"></td>
 								<th></th>
 								<th>To City</th>
-								<td><input type="text" name="toCity"
-									placeholder="To City"
+								<td><input type="text" name="toCity" placeholder="To City"
 									value="<%=ServletUtility.getParameter("toCity", request)%>"
 									class="input-md  textinput textInput form-control"></td>
-										<th>Date</th>
-								<td><input type="text" name="date"
-									placeholder="Date" id="datepicker" readonly="readonly"
+								<th>Date</th>
+								<td><input type="text" name="date" placeholder="Date"
+									id="datepicker" readonly="readonly"
 									value="<%=ServletUtility.getParameter("date", request)%>"
 									class="input-md  textinput textInput form-control"></td>
 								<td><input type="submit"
@@ -86,7 +85,7 @@
 										bean = it.next();
 								%>
 								<tr>
-									
+
 									<td><%=bean.getFlightNo()%></td>
 									<td><%=bean.getFightName()%></td>
 									<td><%=bean.getFromCity()%></td>
@@ -112,7 +111,7 @@
 								class="btn btn-primary btn btn-info"
 								value="<%=IndexCtl.OP_PREVIOUS%>"
 								<%=(pageNo == 1) ? "disabled" : ""%>></li>
-						
+
 							<%
 								FlightModel model = new FlightModel();
 							%>
@@ -130,8 +129,8 @@
 		<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 			type="hidden" name="pageSize" value="<%=pageSize%>">
 	</form>
-<div style="margin-top: 170px">
-	<%@ include file="jsp/Footer.jsp"%>
-</div>	
+	<div style="margin-top: 170px">
+		<%@ include file="jsp/Footer.jsp"%>
+	</div>
 </body>
 </html>

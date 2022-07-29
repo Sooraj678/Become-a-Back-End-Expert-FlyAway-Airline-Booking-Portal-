@@ -12,7 +12,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Flight Reports</title>
-
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
@@ -71,15 +70,15 @@
 							<tbody>
 								<%
 									int pageNo = ServletUtility.getPageNo(request);
-									int pageSize = ServletUtility.getPageSize(request);
-									int index = ((pageNo - 1) * pageSize) + 1;
-									FlightBean bean = null;
-									List list = ServletUtility.getList(request);
-									Iterator<FlightBean> it = list.iterator();
+								int pageSize = ServletUtility.getPageSize(request);
+								int index = ((pageNo - 1) * pageSize) + 1;
+								FlightBean bean = null;
+								List list = ServletUtility.getList(request);
+								Iterator<FlightBean> it = list.iterator();
 
-									while (it.hasNext()) {
+								while (it.hasNext()) {
 
-										bean = it.next();
+									bean = it.next();
 								%>
 								<tr>
 									<td><input type="checkbox" class="case" name="ids"
@@ -132,8 +131,8 @@
 		<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 			type="hidden" name="pageSize" value="<%=pageSize%>">
 	</form>
-<div style="margin-top: 168px">
-	<%@ include file="Footer.jsp"%>
-</div>	
+	<div style="margin-top: 168px">
+		<%@ include file="Footer.jsp"%>
+	</div>
 </body>
 </html>

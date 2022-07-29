@@ -9,7 +9,6 @@
 <style>
 body {
 	background-image: url("images/adminBG.jpg");
-	
 	background-size: 1550px 720px;
 	background-repeat: no-repeat;
 }
@@ -20,9 +19,12 @@ body {
 </style>
 <body>
 	<%@ include file="../jsp/Header.jsp"%>
-	<h1 style="margin: 234px; font-family: inherit; color:white;">
-		<b>Welcome @ Admin to <br>AirLine Ticket-Booking <br>Portal For Adding <br>Flight Please Click Here</b>
-		<br><a href="<%=ATBView.FLIGHT_CTL%>" style="color: blue; font-family: italic;"><b>Add Flight </b>!!</a>
+	<h1 style="margin: 234px; font-family: inherit; color: white;">
+		<b>Welcome @ Admin to <br>AirLine Ticket-Booking <br>Portal
+			For Adding <br>Flight Please Click Here
+		</b> <br>
+		<a href="<%=ATBView.FLIGHT_CTL%>"
+			style="color: blue; font-family: italic;"><b>Add Flight </b>!!</a>
 	</h1>
 
 	<%@ include file="../jsp/Footer.jsp"%>

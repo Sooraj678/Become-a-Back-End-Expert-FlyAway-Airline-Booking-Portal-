@@ -2,7 +2,7 @@
 <%@page import="in.co.air.line.ticket.util.DataUtility"%>
 <%@page import="in.co.air.line.ticket.util.ServletUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +10,7 @@
 <title>Book Ticket</title>
 </head>
 <body>
-<%@ include file="Header.jsp"%>
+	<%@ include file="Header.jsp"%>
 
 	<div class="container">
 
@@ -25,25 +25,25 @@
 				</div>
 				<div class="panel-body">
 					<form method="post" action="<%=ATBView.BOOK_CTL%>">
-						<jsp:useBean id="bean"
-							class="in.co.air.line.ticket.bean.BookBean" scope="request"></jsp:useBean>
+						<jsp:useBean id="bean" class="in.co.air.line.ticket.bean.BookBean"
+							scope="request"></jsp:useBean>
 
 						<% Long fId=(Long)session.getAttribute("boId"); %>
-						
-						<input type="hidden" name="flightId" value="<%=fId%>">
-						<input type="hidden" name="id" value="<%=bean.getId()%>">
-						<input type="hidden" name="createdBy"
-							value="<%=bean.getCreatedBy()%>"> <input type="hidden"
-							name="modifiedBy" value="<%=bean.getModifiedBy()%>"> <input
-							type="hidden" name="createdDatetime"
+
+						<input type="hidden" name="flightId" value="<%=fId%>"> <input
+							type="hidden" name="id" value="<%=bean.getId()%>"> <input
+							type="hidden" name="createdBy" value="<%=bean.getCreatedBy()%>">
+						<input type="hidden" name="modifiedBy"
+							value="<%=bean.getModifiedBy()%>"> <input type="hidden"
+							name="createdDatetime"
 							value="<%=DataUtility.getTimestamp(bean.getCreatedDatetime())%>">
 						<input type="hidden" name="modifiedDatetime"
 							value="<%=DataUtility.getTimestamp(bean.getModifiedDatetime())%>">
 
 
 						<div class="form-group required">
-							<label class="control-label col-md-4  requiredField">First Name
-								<span class="asteriskField">*</span>
+							<label class="control-label col-md-4  requiredField">First
+								Name <span class="asteriskField">*</span>
 							</label>
 							<div class="controls col-md-8 ">
 								<input class="input-md  textinput textInput form-control"
@@ -67,8 +67,8 @@
 						</div>
 
 						<div class="form-group required">
-							<label class="control-label col-md-4  requiredField">Mobile No.
-							<span class="asteriskField">*</span>
+							<label class="control-label col-md-4  requiredField">Mobile
+								No. <span class="asteriskField">*</span>
 							</label>
 							<div class="controls col-md-8 ">
 								<input class="input-md  textinput textInput form-control"
@@ -80,8 +80,8 @@
 						</div>
 
 						<div class="form-group required">
-							<label class="control-label col-md-4  requiredField">Email Id
-								<span class="asteriskField">*</span>
+							<label class="control-label col-md-4  requiredField">Email
+								Id <span class="asteriskField">*</span>
 							</label>
 							<div class="controls col-md-8 ">
 								<input class="input-md  textinput textInput form-control"
@@ -97,26 +97,27 @@
 							</label>
 							<div class="controls col-md-8 ">
 								<input class="input-md  textinput textInput form-control"
-									maxlength="30" name="bookDate" placeholder="Enter Date" readonly="readonly"
-									style="margin-bottom: 10px" type="text" id="datepicker"
-									value="<%=DataUtility.getDateString(bean.getBookDate())%>" /> <font
-									color="red"><%=ServletUtility.getErrorMessage("bookDate", request)%></font>
+									maxlength="30" name="bookDate" placeholder="Enter Date"
+									readonly="readonly" style="margin-bottom: 10px" type="text"
+									id="datepicker"
+									value="<%=DataUtility.getDateString(bean.getBookDate())%>" />
+								<font color="red"><%=ServletUtility.getErrorMessage("bookDate", request)%></font>
 							</div>
 						</div>
-						
+
 						<div class="form-group required">
-							<label class="control-label col-md-4  requiredField">No Of Person
-								<span class="asteriskField">*</span>
+							<label class="control-label col-md-4  requiredField">No
+								Of Person <span class="asteriskField">*</span>
 							</label>
 							<div class="controls col-md-8 ">
 								<input class="input-md  textinput textInput form-control"
 									maxlength="30" name="noP" placeholder="Enter No of Person"
 									style="margin-bottom: 10px" type="text"
-									value="<%=(bean.getNoOfPerson()==0)?1:bean.getNoOfPerson()%>" /> <font
-									color="red"><%=ServletUtility.getErrorMessage("noP", request)%></font>
+									value="<%=(bean.getNoOfPerson()==0)?1:bean.getNoOfPerson()%>" />
+								<font color="red"><%=ServletUtility.getErrorMessage("noP", request)%></font>
 							</div>
 						</div>
-						
+
 						<div class="form-group required">
 							<label class="control-label col-md-4  requiredField">Address<span
 								class="asteriskField">*</span>
@@ -138,8 +139,9 @@
 							<div class="controls col-md-8 ">
 								<input type="submit" name="operation"
 									value="<%=BookCtl.OP_PAYMENT%>"
-									class="btn btn-primary btn btn-info" />
-									 or <input type="submit" name="operation" value="<%=BookCtl.OP_CANCEL%>" class="btn btn btn-primary"  />
+									class="btn btn-primary btn btn-info" /> or <input
+									type="submit" name="operation" value="<%=BookCtl.OP_CANCEL%>"
+									class="btn btn btn-primary" />
 							</div>
 						</div>
 
@@ -152,7 +154,7 @@
 	</div>
 
 
-		<%@ include file="Footer.jsp"%>
+	<%@ include file="Footer.jsp"%>
 
 </body>
 </html>
