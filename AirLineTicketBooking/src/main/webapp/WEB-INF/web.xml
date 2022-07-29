@@ -10,9 +10,19 @@
   	<description></description>
   	<servlet-class>in.co.air.line.ticket.controller.ContactUserCtl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UpdateAdminPwdCtl</servlet-name>
+  	<display-name>UpdateAdminPwdCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.air.line.ticket.controller.UpdateAdminPwdCtl</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ContactUserCtl</servlet-name>
   	<url-pattern>/ContactUserCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateAdminPwdCtl</servlet-name>
+  	<url-pattern>/UpdateAdminPwdCtl</url-pattern>
   </servlet-mapping>
 
  
