@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Flight List</title>
+<title>Flight Lists</title>
 </head>
 <body>
 <%@ include file="jsp/Header.jsp"%>

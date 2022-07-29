@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Payment</title>
+<title>Payment-Page</title>
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
 

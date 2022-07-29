@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Flight Report</title>
+<title>Flight Reports</title>
 
 </head>
 <body>
