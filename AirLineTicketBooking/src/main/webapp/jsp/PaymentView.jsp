@@ -219,7 +219,7 @@ body {
 							</label>
 							<div class="controls col-md-8 ">
 								<input class="input-md  textinput textInput form-control"
-									maxlength="30" name="" placeholder="Enter Card Holder Name"
+									maxlength="30" name="" placeholder="CVV of Card"
 									style="margin-bottom: 10px" type="text" value="" />
 							</div>
 						</div>

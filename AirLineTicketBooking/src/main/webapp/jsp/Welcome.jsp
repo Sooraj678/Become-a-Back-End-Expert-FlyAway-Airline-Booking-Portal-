@@ -23,10 +23,7 @@ body {
 		Welcome to AirLine Ticket Booking.FlyAway is a <br>
 		ticket-booking portal that lets people book flights on their <br>
 		website.In travel industry,FlyAway provides the best Flight <br>
-		Booking Software with complete Flight <br> Booking Quotation
-		System. FlyAway<br>is online booking system that helps endUsers<br>
-		to search and book flight tickets online <br>for particular seats
-		from various flights.
+		Booking Software.
 	</h4>
 
 	<%@ include file="Footer.jsp"%>

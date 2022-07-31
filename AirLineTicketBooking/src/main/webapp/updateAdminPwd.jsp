@@ -67,7 +67,7 @@
 							<div class="controls col-md-8 ">
 								<input class="input-md textinput textInput form-control"
 									name="firstName" placeholder="Enter Admins' First Name"
-									style="margin-bottom: 10px" type="password" value="" /> <font
+									style="margin-bottom: 10px" type="text" value="" /> <font
 									color="red"> </font>
 							</div>
 						</div>
@@ -80,7 +80,7 @@
 							<div class="controls col-md-8 ">
 								<input class="input-md textinput textInput form-control"
 									name="lastName" placeholder="Enter Admins' Last Name"
-									style="margin-bottom: 10px" type="password" value="" /> <font
+									style="margin-bottom: 10px" type="text" value="" /> <font
 									color="red"> </font>
 							</div>
 						</div>
