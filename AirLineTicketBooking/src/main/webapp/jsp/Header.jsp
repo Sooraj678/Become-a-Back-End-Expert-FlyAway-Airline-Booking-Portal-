@@ -110,7 +110,7 @@ $(function(){
 
 
 			<%}else{%>
-			<li><a href="<%=ATBView.INDEX_CTL%>">Flight</a></li>
+			<li><a href="<%=ATBView.INDEX_CTL%>">Book-Flight</a></li>
 			<li><a href="<%=ATBView.LOGIN_CTL%>">Admin Login</a></li>
 			<li><a href="welcomeGuest.jsp">Hi, Guest !</a></li>
 			<li><a href="about.jsp">About</a></li>
